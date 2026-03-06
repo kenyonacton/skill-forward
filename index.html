@@ -130,6 +130,35 @@
     }
     .btn:hover { transform: translateY(-1px); background: rgba(255,255,255,0.14); }
     .btn.secondary { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn.apply-blue {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+    }
+    .btn.apply-blue:hover {
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.45);
+    }
+    .btn.apply-hero {
+      padding: 16px 22px;
+      font-size: 1.1em;
+    }
+    .btn.apply-bottom {
+      padding: 20px 36px;
+      font-size: 1.25em;
+      letter-spacing: 0.04em;
+    }
+    .apply-section {
+      padding: 60px 0;
+      text-align: center;
+    }
+    .apply-section p {
+      color: var(--muted);
+      margin: 0 0 20px;
+      font-size: 16px;
+    }
     .hero-img {
       height: 100%;
       display: grid;
@@ -366,7 +395,6 @@
         <a class="pill" href="#bootcamps">Bootcamps</a>
         <a class="pill" href="#how">Structure</a>
         <a class="pill" href="#contact">Contact</a>
-        <a class="cta" href="https://forms.gle/ptUyrQhBrufd4LkZA" target="_blank" rel="noopener">Apply Now</a>
       </nav>
     </div>
   </div>
@@ -388,7 +416,7 @@
           </div>
           <div class="hero-actions">
             <a class="btn" href="#bootcamps">Explore Bootcamps</a>
-            <a class="btn secondary" href="https://forms.gle/ptUyrQhBrufd4LkZA" target="_blank" rel="noopener">Apply Now ➺</a>
+            <a class="btn apply-blue apply-hero" href="https://forms.gle/ptUyrQhBrufd4LkZA" target="_blank" rel="noopener">Apply Now ➺</a>
           </div>
         </div>
 
@@ -470,7 +498,6 @@
 
           <div class="footer">
             <span class="small">Best for: beginners who want a portfolio artifact quickly</span>
-            <a class="btn" href="https://forms.gle/ptUyrQhBrufd4LkZA" target="_blank" rel="noopener">Apply Now ➺</a>
           </div>
         </article>
 
@@ -496,7 +523,6 @@
 
           <div class="footer">
             <span class="small">Best for: learners ready to go from use-case to deployed solution</span>
-            <a class="btn" href="https://forms.gle/ptUyrQhBrufd4LkZA" target="_blank" rel="noopener">Apply Now ➺</a>
           </div>
         </article>
       </div>
@@ -534,7 +560,6 @@
 
           <div class="footer">
             <span class="small">Best for: fast prototype + quick validation</span>
-            <a class="btn" href="https://forms.gle/ptUyrQhBrufd4LkZA" target="_blank" rel="noopener">Apply Now ➺</a>
           </div>
         </article>
 
@@ -560,7 +585,6 @@
 
           <div class="footer">
             <span class="small">Best for: deeper build + stronger portfolio asset</span>
-            <a class="btn" href="https://forms.gle/ptUyrQhBrufd4LkZA" target="_blank" rel="noopener">Apply Now ➺</a>
           </div>
         </article>
       </div>
@@ -595,7 +619,26 @@
         </div>
       </div>
     </div>
-  </section><section id="contact" class="contact">
+  </section>
+
+  <section id="benefits">
+    <div class="container">
+      <div class="section-title">
+        <h2>How Will You Benefit?</h2>
+      </div>
+
+      <div class="card">
+        <ul>
+          <li>Development of a Proof of Work Portfolio</li>
+          <li>Be able to use AI to perform a variety of tasks (e.g. editing websites, summarizing documents, etc.)</li>
+          <li>A basic understanding of the AI tools and how to use them</li>
+          <li>Skills that you can add on your Resume</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
     <div class="container">
       <div class="section-title">
         <h2>Still have questions? <em style="font-weight:600;">let’s chat</em>.</h2>
@@ -622,10 +665,16 @@
         <p class="form-feedback" id="contactFeedback" role="status" aria-live="polite"></p>
         <div class="form-actions">
           <button class="btn" type="submit">Open Email Draft</button>
-          <a class="btn secondary" href="https://forms.gle/ptUyrQhBrufd4LkZA" target="_blank" rel="noopener">Apply Now ➺</a>
           <span class="small">This will open your default email client.</span>
         </div>
       </form>
+    </div>
+  </section>
+
+  <section class="apply-section">
+    <div class="container">
+      <p>Ready to accelerate your skills with AI?</p>
+      <a class="btn apply-blue apply-bottom" href="https://forms.gle/ptUyrQhBrufd4LkZA" target="_blank" rel="noopener">Apply Now ➺</a>
     </div>
   </section>
 
