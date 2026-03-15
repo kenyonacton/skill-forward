@@ -439,44 +439,178 @@
     }
 
     /* Eligibility */
-    .elig-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-    @media (max-width: 700px) {
-      .elig-grid { grid-template-columns: 1fr; }
-    }
+    .elig-stack { display: flex; flex-direction: column; gap: 18px; }
     .elig-card {
       border: 1px solid var(--border);
       background: var(--card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 20px;
+      padding: 22px 24px;
     }
-    .elig-card h3 {
-      margin: 0 0 12px;
+    .elig-card-title {
+      margin: 0 0 4px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .elig-card-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+    .elig-reqs { display: flex; flex-direction: column; gap: 12px; }
+    .elig-req {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .elig-req-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.20);
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      margin-top: 1px;
+    }
+    .elig-req-body { flex: 1; }
+    .elig-req-body strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .elig-req-body p {
+      margin: 0;
+      font-size: 13px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.5;
+    }
+    .elig-divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 6px 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-family: var(--mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .elig-divider::before, .elig-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    /* Accordion (details/summary) */
+    .elig-accordion { display: flex; flex-direction: column; gap: 10px; }
+    details.elig-type {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      overflow: hidden;
+    }
+    details.elig-type[open] {
+      background: rgba(255,255,255,0.05);
+    }
+    summary.elig-type-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+    }
+    summary.elig-type-summary::-webkit-details-marker { display: none; }
+    .elig-type-summary-left { display: flex; flex-direction: column; gap: 2px; }
+    .elig-type-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .elig-type-name {
       font-size: 15px;
       font-weight: 700;
-      letter-spacing: 0.02em;
     }
-    .elig-card ul {
-      margin: 0 0 0 16px;
+    .elig-type-chevron {
+      flex-shrink: 0;
+      font-size: 12px;
+      color: var(--muted);
+      transition: transform 180ms ease;
+    }
+    details.elig-type[open] .elig-type-chevron { transform: rotate(180deg); }
+    .elig-type-body {
+      padding: 0 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .elig-sub-section { display: flex; flex-direction: column; gap: 8px; }
+    .elig-sub-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .elig-sub-req {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .elig-letter {
+      flex-shrink: 0;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.55);
+      padding-top: 2px;
+      min-width: 18px;
+    }
+    .elig-sub-req p {
+      margin: 0;
+      font-size: 13px;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.55;
+    }
+    .elig-sub-req ul {
+      margin: 6px 0 0 16px;
       padding: 0;
     }
-    .elig-card li {
-      font-size: 14px;
-      color: rgba(255,255,255,0.82);
-      margin: 7px 0;
+    .elig-sub-req li {
+      font-size: 13px;
+      color: rgba(255,255,255,0.70);
+      margin: 5px 0;
     }
     .elig-note {
-      margin-top: 14px;
       padding: 12px 16px;
-      border-radius: 12px;
+      border-radius: 10px;
       background: rgba(59,130,246,0.10);
       border: 1px solid rgba(59,130,246,0.25);
       font-size: 13px;
       color: rgba(255,255,255,0.80);
+    }
+    .elig-or-badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      margin: 4px 0;
+      align-self: flex-start;
     }
   </style>
 </head>
@@ -806,32 +940,121 @@
     <div class="container">
       <div class="section-title">
         <h2>Eligibility Requirements</h2>
-        <div class="hint">Open to motivated learners — no engineering background required.</div>
+        <div class="hint">This program is funded through a Dislocated Worker grant. All applicants must meet the base requirements and qualify under one dislocation type.</div>
       </div>
 
-      <div class="elig-grid">
+      <div class="elig-stack">
+
+        <!-- Base requirements -->
         <div class="elig-card">
-          <h3>Who Should Apply</h3>
-          <ul>
-            <li>Community members, workforce development participants, or anyone referred through an Escape With Velocity partner</li>
-            <li>Motivated to learn and commit to the program hours (20 or 40 hrs)</li>
-            <li>Have a problem or idea you want to build a solution for</li>
-            <li>Able to attend at least one live virtual session per week</li>
-            <li>Access to a computer with a reliable internet connection</li>
-          </ul>
-        </div>
-        <div class="elig-card">
-          <h3>No Experience Needed In</h3>
-          <ul>
-            <li>Software engineering or coding</li>
-            <li>AI or machine learning</li>
-            <li>Product design or UX</li>
-            <li>Deployment or DevOps</li>
-          </ul>
-          <div class="elig-note">
-            Curiosity and commitment are the only prerequisites. We provide the tools, frameworks, and mentorship — you bring the problem and the drive.
+          <p class="elig-card-title">Base Requirements</p>
+          <p class="elig-card-sub">All of the following must be met by every applicant.</p>
+
+          <div class="elig-reqs">
+            <div class="elig-req">
+              <div class="elig-req-icon">1</div>
+              <div class="elig-req-body">
+                <strong>Valid Government-Issued Photo ID</strong>
+                <p>Used to verify your name and date of birth. There is no minimum age requirement.</p>
+              </div>
+            </div>
+            <div class="elig-req">
+              <div class="elig-req-icon">2</div>
+              <div class="elig-req-body">
+                <strong>Selective Service Compliance</strong>
+                <p>Required if you were assigned male at birth, are a U.S. citizen or immigrant residing in the U.S., are between ages 18–25, and were born after January 1, 1960. Registration status is verified through <a href="https://www.sss.gov/verify/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85);text-decoration:underline;">sss.gov/verify</a>.</p>
+              </div>
+            </div>
+            <div class="elig-req">
+              <div class="elig-req-icon">3</div>
+              <div class="elig-req-body">
+                <strong>Authorization to Work in the United States</strong>
+                <p>Verified via documentation equivalent to Federal Form I-9 requirements — typically a government-issued ID plus Social Security card, or a valid passport.</p>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Dislocation type -->
+        <div class="elig-card">
+          <p class="elig-card-title">Dislocation Type</p>
+          <p class="elig-card-sub">Applicants must qualify under <strong>one</strong> of the following dislocation types. Eligibility is confirmed by participant attestation.</p>
+
+          <div class="elig-accordion">
+
+            <!-- Type 1 -->
+            <details class="elig-type">
+              <summary class="elig-type-summary">
+                <div class="elig-type-summary-left">
+                  <span class="elig-type-label">Type 1</span>
+                  <span class="elig-type-name">Terminated or Laid-off Worker</span>
+                </div>
+                <span class="elig-type-chevron">▼</span>
+              </summary>
+              <div class="elig-type-body">
+                <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.70);">Must meet <strong>all three</strong> of the following requirements (A, B, and C):</p>
+
+                <div class="elig-sub-section">
+                  <div class="elig-sub-req">
+                    <span class="elig-letter">A.</span>
+                    <p>Has been terminated or laid off, or has received a notice of termination or layoff from employment (including a separation notice from active military service).</p>
+                  </div>
+                  <div class="elig-sub-req">
+                    <span class="elig-letter">B.</span>
+                    <p>Is eligible for or has exhausted unemployment insurance compensation — or has been employed for at least three months but is not eligible for unemployment insurance due to insufficient earnings or working for a non-covered employer.</p>
+                  </div>
+                  <div class="elig-sub-req">
+                    <span class="elig-letter">C.</span>
+                    <div>
+                      <p>Is unlikely to return to their previous industry or occupation. This can be due to any of the following:</p>
+                      <ul>
+                        <li>Negative economic conditions or sudden economic impact (e.g., pandemic or natural disaster)</li>
+                        <li>Decline in the applicant's previous occupation in the local market</li>
+                        <li>Significant barriers to employment — such as criminal background, lack of high school diploma/GED, disability, homelessness, cultural or language barriers, being an older worker (55+), or deficient basic skills</li>
+                        <li>Previous industry or occupation has been eliminated, or applicant cannot secure comparable compensation</li>
+                        <li>Exhausted unemployment benefits and unable to find work in previous industry or occupation</li>
+                        <li>Seasonally employed and unlikely to return due to mechanization or significant variance in normal seasonal employment patterns</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <div class="elig-divider">or</div>
+
+            <!-- Type 2 -->
+            <details class="elig-type">
+              <summary class="elig-type-summary">
+                <div class="elig-type-summary-left">
+                  <span class="elig-type-label">Type 2</span>
+                  <span class="elig-type-name">Business Closed or Substantial Layoff</span>
+                </div>
+                <span class="elig-type-chevron">▼</span>
+              </summary>
+              <div class="elig-type-body">
+                <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.70);">Must meet <strong>one</strong> of the following requirements (A or B):</p>
+
+                <div class="elig-sub-section">
+                  <div class="elig-sub-req">
+                    <span class="elig-letter">A.</span>
+                    <p>Has been terminated or laid off, or received notice of termination or layoff, due to the permanent closure of or a substantial layoff (10 or more affected workers) at a company, plant, facility, military installation, or business enterprise.</p>
+                  </div>
+                  <div class="elig-sub-req">
+                    <span class="elig-letter">B.</span>
+                    <p>Is employed at a company where the employer has made a general announcement that the company or location will close within 180 days. A general announcement may include media coverage, filing of a WARN with the State, or written corporate notice of intent to close (including email, employer website, and/or social media postings).</p>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <div class="elig-note">
+          Not sure if you qualify? <a href="#contact" style="color:rgba(255,255,255,0.90);text-decoration:underline;">Contact us</a> — our team can help walk you through the requirements before you apply.
+        </div>
+
       </div>
     </div>
   </section>
