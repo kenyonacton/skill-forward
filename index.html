@@ -612,6 +612,45 @@
       margin: 4px 0;
       align-self: flex-start;
     }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    details.faq-item {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--card);
+      overflow: hidden;
+      transition: background 140ms ease;
+    }
+    details.faq-item[open] { background: var(--card2); }
+    summary.faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 20px;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    summary.faq-q::-webkit-details-marker { display: none; }
+    .faq-chevron {
+      flex-shrink: 0;
+      font-size: 11px;
+      color: var(--muted);
+      transition: transform 180ms ease;
+    }
+    details.faq-item[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-a {
+      padding: 0 20px 18px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.6;
+    }
+    .faq-a p { margin: 0 0 8px; }
+    .faq-a p:last-child { margin-bottom: 0; }
   </style>
 </head>
 <body>
@@ -630,6 +669,7 @@
         <a class="pill" href="#how">Structure</a>
         <a class="pill" href="#timeline">Timeline</a>
         <a class="pill" href="#eligibility">Eligibility</a>
+        <a class="pill" href="#faq">FAQ</a>
         <a class="pill" href="#contact">Contact</a>
       </nav>
     </div>
@@ -1072,6 +1112,61 @@
           <li>A basic understanding of the AI tools and how to use them</li>
           <li>Skills that you can add on your Resume</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <div class="hint">Common questions about eligibility and how the program works.</div>
+      </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            I was a Dislocated Worker but I currently have a job — am I still eligible?
+            <span class="faq-chevron">▼</span>
+          </summary>
+          <div class="faq-a">
+            <p>Yes, you are still eligible. Meeting the Dislocated Worker criteria is based on your work history and dislocation experience, not your current employment status. If you previously experienced a qualifying dislocation — such as a layoff, termination, or business closure — you can still participate in the program even if you have since found new work.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            What is Selective Service compliance, and do I need to worry about it?
+            <span class="faq-chevron">▼</span>
+          </summary>
+          <div class="faq-a">
+            <p>Selective Service registration is a federal requirement — separate from having a valid ID and work authorization — that applies to a specific group of people. You are required to register if you were assigned male at birth, are a U.S. citizen or immigrant residing in the U.S., are between ages 18–25, and were born after January 1, 1960.</p>
+            <p>If that applies to you, your registration status will be verified through <a href="https://www.sss.gov/verify/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85);text-decoration:underline;">sss.gov/verify</a>. If it does not apply to you, no action is needed on your part.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            I'm a recent college graduate — can I participate?
+            <span class="faq-chevron">▼</span>
+          </summary>
+          <div class="faq-a">
+            <p>Yes — recent college graduates are welcome to participate in Skill Forward's training programs. You will need to meet the base requirements (valid ID, work authorization, and Selective Service compliance if applicable).</p>
+            <p>However, the <strong>completion stipend</strong> is specifically tied to the Dislocated Worker grant funding. To receive the stipend, you would need to qualify under one of the Dislocated Worker dislocation types. If you don't meet that criteria, you can still participate in the bootcamp and receive your certificate and AI credits upon completion.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Do I need to commit to all the programs, or can I attend just one?
+            <span class="faq-chevron">▼</span>
+          </summary>
+          <div class="faq-a">
+            <p>You can attend just one program — or all of them. Each offering (Ramp, 2-Week Bootcamp, 4-Week Bootcamp) is enrolled separately, so you choose what fits your schedule and goals. There is no requirement to commit to multiple programs at once.</p>
+          </div>
+        </details>
+
       </div>
     </div>
   </section>
