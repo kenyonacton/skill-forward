@@ -97,7 +97,7 @@ window.COHORT = [
     site: "https://codeconnect-craft.lovable.app/",
     portfolio: "https://skill-bridge-ai-30.lovable.app",
     learnings: "Tried Lovable and Replit. Lovable is more UI-friendly and easy to integrate with GitHub. Replit allowed more prompts/tokens without subscription, but GitHub integration needs work.",
-    testimonial: ""
+    testimonial: "The Skill Forward sessions have been extremely engaging and valuable, both for self-development and for preparing for today’s job market. The roadmap is thoughtfully structured to provide hands-on learning while also helping participants understand current AI trends and practical applications. I especially appreciate how the sessions balance learning, experimentation, and real-world relevance, making the entire experience motivating and insightful. Grateful to the mentor for creating such an interactive and well-organized learning journey."
   },
   {
     name: "Jon Beam",
