@@ -2,8 +2,15 @@
 window.COHORT = [
   {
     name: "Mary Killelea",
-    northStar: "I love learning and I'm excited about what's possible with AI.",
-    gap: "Started and completed a project with relevant tools (Lovable, GitHub).",
+    northStar: "My north star is to build practical AI skills that I can apply professionally, monetize strategically, and use to open new career opportunities and relationships.",
+    gap: <h3>"What I Gained<h3>
+<ul>
+      <li>AI terminology and practical fluency</li>
+<li>Confidence using emerging tools</li>
+<li>Comfort experimenting and building</li>
+<li>Hands-on experience with Lovable and GitHub</li>
+<li>A clearer understanding of how to apply AI professionally</li>
+<li>New connections and career possibilities</li></ul>",
     giving: "Help others articulate their value, simplify their message, and convey confidence and authority — and gut-check Skill-Forward's program for non-technical audiences.",
     tools: ["Claude", "Lovable", "GitHub"],
     site: "https://marys-creative-canvas.lovable.app/",
