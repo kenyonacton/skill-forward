@@ -9,7 +9,7 @@ window.COHORT = [
     site: "https://marys-creative-canvas.lovable.app/",
     portfolio: "https://marys-creative-canvas.lovable.app/",
     learnings: "Learned what role GitHub plays, how to access it, and what Lovable is and how it interacts with GitHub. It's helpful to have a project to apply the learning to.",
-    testimonial: ""
+    testimonial: "The Skill-Forward program is a real asset for professionals looking to upskill and learn AI. The supportive, structured environment gave me the community and guidance I was looking for. Before the program, I had never used Lovable or GitHub, and I’m grateful to have been part of the initial cohort where I could learn those skills and make new connections. The program offers tremendous value for both students and the broader community."
   },
   {
     name: "Pedro I Hernández",
